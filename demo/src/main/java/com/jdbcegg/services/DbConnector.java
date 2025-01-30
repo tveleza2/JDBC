@@ -16,7 +16,7 @@ public class DbConnector {
             return null;
         }
     }
-    public static void shutConnection(Connection con) {
+    public static void closeConnection(Connection con) {
         if (con != null) {
             try {
                 con.close();
