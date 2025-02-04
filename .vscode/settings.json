@@ -13,5 +13,6 @@
             "database": "vivero",
             "username": "root"
         }
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

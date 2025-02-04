@@ -2,7 +2,6 @@ package com.jdbcegg.entities;
 
 public class Cliente {
     private int idCliente;
-    private int codigoCliente;
     private String nombreCliente;
     private String nombreContacto;
     private String apellidoContacto;
@@ -14,11 +13,10 @@ public class Cliente {
     private String codigoPostal;
     private int idEmpleado;
     private double limiteCredito;
-    public Cliente(int idCliente, int codigoCliente, String nombreCliente, String nombreContacto,
+    public Cliente(int idCliente,String nombreCliente, String nombreContacto,
             String apellidoContacto, String telefono, String fax, String ciudad, String region, String pais,
             String codigoPostal, int idEmpleado, double limiteCredito) {
         this.idCliente = idCliente;
-        this.codigoCliente = codigoCliente;
         this.nombreCliente = nombreCliente;
         this.nombreContacto = nombreContacto;
         this.apellidoContacto = apellidoContacto;
@@ -31,10 +29,7 @@ public class Cliente {
         this.idEmpleado = idEmpleado;
         this.limiteCredito = limiteCredito;
     }
-    public Cliente(int codigoCliente, String nombreCliente, String nombreContacto,
-            String apellidoContacto, String telefono, String fax, String ciudad, String region, String pais,
-            String codigoPostal, int idEmpleado, double limiteCredito) {
-        this.codigoCliente = codigoCliente;
+    public Cliente(String nombreCliente, String nombreContacto,String apellidoContacto, String telefono, String fax, String ciudad, String region, String pais,String codigoPostal, int idEmpleado, double limiteCredito) {
         this.nombreCliente = nombreCliente;
         this.nombreContacto = nombreContacto;
         this.apellidoContacto = apellidoContacto;
@@ -54,12 +49,6 @@ public class Cliente {
     }
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
-    }
-    public int getCodigoCliente() {
-        return codigoCliente;
-    }
-    public void setCodigoCliente(int codigoCliente) {
-        this.codigoCliente = codigoCliente;
     }
     public String getNombreCliente() {
         return nombreCliente;
@@ -127,4 +116,10 @@ public class Cliente {
     public void setLimiteCredito(double limiteCredito) {
         this.limiteCredito = limiteCredito;
     }
+
+    public String imprimirCliente() {
+        return "ID:"+ this.idCliente +", Cliente: "+ this.nombreCliente +", Contacto: " + this.nombreContacto + " " + this.apellidoContacto;
+    }
+
+
 }
