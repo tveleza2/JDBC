@@ -1,0 +1,89 @@
+package com.eggtomy.entities;
+
+public class Cliente{
+    private int idCliente;
+    private String cliente;
+    private String calle;
+    private int numero;
+    private int codigoPostal;
+    private String ciudad;
+    private String pais;
+    private String email;
+    public int getIdCliente() {
+        return idCliente;
+    }
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
+    }
+    public String getCliente() {
+        return cliente;
+    }
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+    public String getCalle() {
+        return calle;
+    }
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+    public int getNumero() {
+        return numero;
+    }
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    public int getCodigoPostal() {
+        return codigoPostal;
+    }
+    public void setCodigoPostal(int codigoPostal) {
+        this.codigoPostal = codigoPostal;
+    }
+    public String getCiudad() {
+        return ciudad;
+    }
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+    public String getPais() {
+        return pais;
+    }
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public Cliente(int idCliente, String cliente, String calle, int numero, int codigoPostal, String ciudad,
+            String pais, String email) {
+        this.idCliente = idCliente;
+        this.cliente = cliente;
+        this.calle = calle;
+        this.numero = numero;
+        this.codigoPostal = codigoPostal;
+        this.ciudad = ciudad;
+        this.pais = pais;
+        this.email = email;
+    }
+    public Cliente(String cliente, String calle, int numero, int codigoPostal, String ciudad, String pais,
+            String email) {
+        this.cliente = cliente;
+        this.calle = calle;
+        this.numero = numero;
+        this.codigoPostal = codigoPostal;
+        this.ciudad = ciudad;
+        this.pais = pais;
+        this.email = email;
+    }
+    public Cliente() {
+    }
+    @Override
+    public String toString() {
+        return "Cliente [idCliente=" + idCliente + ", cliente=" + cliente + ", calle=" + calle + ", numero=" + numero
+                + ", codigoPostal=" + codigoPostal + ", ciudad=" + ciudad + ", pais=" + pais + ", email=" + email + "]";
+    }
+    
+}
