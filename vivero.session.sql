@@ -5,4 +5,9 @@ INSERT INTO Cliente (nombre_cliente,nombre_contacto, apellido_contacto, telefono
 SELECT * FROM cliente;
 
 
+
+USE estancias_exterior;
+
+SELECT * FROM familias;
+
 DELETE FROM cliente WHERE nombre_cliente = 'Postobon';

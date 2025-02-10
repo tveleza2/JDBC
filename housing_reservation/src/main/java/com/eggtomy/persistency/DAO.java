@@ -9,6 +9,7 @@ import java.sql.SQLException;
 public abstract class DAO {
     protected Connection connection = null;
     protected ResultSet resultSet = null;
+    protected boolean verbose = false;
     protected PreparedStatement statement = null;
     private final String HOST = "127.0.0.1";
     private final String PORT = "3306";
@@ -111,6 +112,14 @@ public abstract class DAO {
             System.out.println(ex.getMessage());
             throw ex;
         }
+    }
+
+    public ResultSet getResultSet() {
+        return resultSet;
+    }
+
+    public void setVerbose(boolean verbose) {
+        this.verbose = verbose;
     }
 
     public void close() {

@@ -16,7 +16,7 @@ public class FamiliaDAO extends DAO {
         }
     }
 
-    public void readFamilias() {
+    public List<Familia> readFamilias() {
         String query = "SELECT * FROM familias;";
         List<Familia> familias = new ArrayList<>();
         try {
@@ -27,15 +27,18 @@ public class FamiliaDAO extends DAO {
             while(resultSet.next()){
                 Familia newFamilia = new Familia(resultSet.getInt("id_familia"),resultSet.getString("nombre"),resultSet.getInt("edad_minima"),resultSet.getInt("edad_maxima"),resultSet.getInt("num_hijos"),resultSet.getString("email"),resultSet.getInt("id_casa_familia"));
                 familias.add(newFamilia);
-
             }
-            Iterator <Familia> it = familias.iterator();
-            while(it.hasNext()){
-                System.out.println(it.next().toString());
+            if (verbose) {
+                Iterator <Familia> it = familias.iterator();
+                while(it.hasNext()){
+                    System.out.println(it.next().toString());
+                }
             }
+            return familias;
 
         } catch (Exception e) {
             System.out.println(e);
+            return null;
         }
     }
 
