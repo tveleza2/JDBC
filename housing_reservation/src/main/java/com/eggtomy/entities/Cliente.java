@@ -2,10 +2,10 @@ package com.eggtomy.entities;
 
 public class Cliente{
     private int idCliente;
-    private String cliente;
+    private String nombre;
     private String calle;
     private int numero;
-    private int codigoPostal;
+    private String codigoPostal;
     private String ciudad;
     private String pais;
     private String email;
@@ -15,11 +15,11 @@ public class Cliente{
     public void setIdCliente(int idCliente) {
         this.idCliente = idCliente;
     }
-    public String getCliente() {
-        return cliente;
+    public String getNombre() {
+        return nombre;
     }
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setNombre(String cliente) {
+        this.nombre = cliente;
     }
     public String getCalle() {
         return calle;
@@ -33,10 +33,10 @@ public class Cliente{
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    public int getCodigoPostal() {
+    public String getCodigoPostal() {
         return codigoPostal;
     }
-    public void setCodigoPostal(int codigoPostal) {
+    public void setCodigoPostal(String codigoPostal) {
         this.codigoPostal = codigoPostal;
     }
     public String getCiudad() {
@@ -57,10 +57,10 @@ public class Cliente{
     public void setEmail(String email) {
         this.email = email;
     }
-    public Cliente(int idCliente, String cliente, String calle, int numero, int codigoPostal, String ciudad,
+    public Cliente(int idCliente, String cliente, String calle, int numero, String codigoPostal, String ciudad,
             String pais, String email) {
         this.idCliente = idCliente;
-        this.cliente = cliente;
+        this.nombre = cliente;
         this.calle = calle;
         this.numero = numero;
         this.codigoPostal = codigoPostal;
@@ -68,9 +68,9 @@ public class Cliente{
         this.pais = pais;
         this.email = email;
     }
-    public Cliente(String cliente, String calle, int numero, int codigoPostal, String ciudad, String pais,
+    public Cliente(String cliente, String calle, int numero, String codigoPostal, String ciudad, String pais,
             String email) {
-        this.cliente = cliente;
+        this.nombre = cliente;
         this.calle = calle;
         this.numero = numero;
         this.codigoPostal = codigoPostal;
@@ -82,7 +82,7 @@ public class Cliente{
     }
     @Override
     public String toString() {
-        return "Cliente [idCliente=" + idCliente + ", cliente=" + cliente + ", calle=" + calle + ", numero=" + numero
+        return "Cliente [idCliente=" + idCliente + ", cliente=" + nombre + ", calle=" + calle + ", numero=" + numero
                 + ", codigoPostal=" + codigoPostal + ", ciudad=" + ciudad + ", pais=" + pais + ", email=" + email + "]";
     }
     
