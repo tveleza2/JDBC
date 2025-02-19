@@ -11,7 +11,15 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "editorial")
 public class Editorial {
-    public Editorial(){}
+    public Editorial(){
+        setAlta(true);
+    }
+    
+    public Editorial(String nombre){
+        setNombre(nombre);
+        setAlta(true);
+    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
