@@ -13,7 +13,7 @@ public class AutorServicio {
 
     public static void persistNuevoAutor(String nombre) throws Exception{
         List<Autor> authors = authorDao.findAutores(nombre);
-        if (authors.isEmpty()) {
+        if (!authors.isEmpty()) {
             throw new Exception(String.format("El autor %s ya existe en la base de datos",nombre));
         }else{
             Autor author = new Autor(nombre);
@@ -21,13 +21,29 @@ public class AutorServicio {
         }
     }
 
-    public void toggleAlta(int id){
-        Autor autor = authorDao.findAutor(id);
-        autor.setAlta(!autor.isAlta());
-        authorDao.actualizarAutor(autor);
+    public static void autorPorNombre(String nombre) throws Exception{
+        if(nombre == null){
+            throw new Exception("El nombre no puede ser nulo");
+        }
+        List<Autor> autoresList = authorDao.findAutores(nombre);
+        mostrarAutores(autoresList);
     }
 
-    private void mostrarAutores(List<Autor> listaAutores){
+    public static void actualizarAutor(int id, String nombre){
+        Autor aut = authorDao.findAutor(id);
+        authorDao.actualizarAutor(autor);
+    }
+    
+
+    public static void toggleAlta(int id){
+        Autor autor = authorDao.findAutor(id);
+        if(autor!=null){
+        autor.setAlta(!autor.isAlta());
+        authorDao.actualizarAutor(autor);
+        }
+    }
+
+    private static void mostrarAutores(List<Autor> listaAutores){
         Iterator<Autor> it = listaAutores.iterator();
         while (it.hasNext()) {
             System.out.println(it.next().toString());
