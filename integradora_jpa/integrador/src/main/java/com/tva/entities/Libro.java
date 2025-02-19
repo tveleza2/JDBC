@@ -1,6 +1,8 @@
 package com.tva.entities;
 
 
+import java.time.Year;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -11,7 +13,21 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "libro")
 public class Libro {
-    public Libro(){}
+    public Libro(){
+        setAlta(true);
+        setEjemplares(1);
+        setAnio(Year.now().getValue());
+    }
+
+    public Libro(long isbn, String titulo, int anio, int ejemplares,Autor autor, Editorial editorial){
+        setAnio(anio);
+        setAutor(autor);
+        setEditorial(editorial);
+        setEjemplares(ejemplares);
+        setIsbn(isbn);
+        setTitulo(titulo);
+        setAlta(true);
+    }
 
     @Id
     @Column(name="isbn")

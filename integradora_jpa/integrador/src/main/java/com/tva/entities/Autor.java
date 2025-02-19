@@ -10,7 +10,13 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="autor")
 public class Autor {
-    public Autor(){}
+    public Autor(){
+        setAlta(true);
+    }
+
+    public Autor(String nombre){
+        setNombre(nombre);
+    }
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

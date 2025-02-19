@@ -5,7 +5,11 @@ import java.util.List;
 import com.tva.entities.Autor;
 
 public class AutorDAO extends DAO {
-    public void guardaAutor(Autor autor) throws Exception {
+    public AutorDAO(){
+        System.out.print(CLEAR);
+    }
+
+    public void guardaAutor(Autor autor) {
         em.getTransaction().begin();
         em.persist(autor);
         em.getTransaction().commit();
@@ -17,21 +21,25 @@ public class AutorDAO extends DAO {
         em.getTransaction().commit();
     }
 
-    public Autor findAutorId(int id){
+    public Autor findAutor(int id){
         return em.find(Autor.class, id);
     }
 
-    public List<Autor> findAutoresNombre(String nombre){
-        return em.createQuery("SELECT a FROM Autor a WHERE a.nombre LIKE:name",Autor.class).setParameter("nombre", nombre).getResultList();
+    public List<Autor> findAutores(String nombre){
+        return em.createQuery("SELECT a FROM Autor a WHERE a.nombre LIKE:name",Autor.class).setParameter("name", nombre).getResultList();
     }
 
+    public List<Autor> findAutores(){
+        return em.createQuery("SELECT a FROM Autor a WHERE a.alta = TRUE ",Autor.class).getResultList();
+    }
 
     public void eliminarAutor(int id) {
-        Autor cliente = findAutorId(id);
-        if (cliente != null) {
+        Autor autor = findAutor(id);
+        if (autor != null) {
             em.getTransaction().begin();
-            em.remove(cliente);
+            em.remove(autor);
             em.getTransaction().commit();
         }
     }
+
 }
