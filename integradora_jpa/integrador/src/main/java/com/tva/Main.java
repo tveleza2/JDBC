@@ -1,6 +1,7 @@
 package com.tva;
 
 import com.tva.persistency.*;
+import com.tva.services.AutorServicio;
 import com.tva.entities.*;
 import java.util.*;
 
@@ -14,7 +15,13 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.print(CLEAR);
-        LibroDAO lDao = new LibroDAO();
+        // LibroDAO lDao = new LibroDAO();
+        try{
+            AutorServicio.autorPorNombre("f");
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
         // EditorialDAO eDao = new EditorialDAO();
         // AutorDAO aDao = new AutorDAO();
 
@@ -28,9 +35,9 @@ public class Main {
 
 
 
-        Iterator<Libro> it = lDao.findLibrosAutor("J.R.R. Tolkien").iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next().toString());
-        }
+        // Iterator<Libro> it = lDao.findLibrosAutor("J.R.R. Tolkien").iterator();
+        // while (it.hasNext()) {
+        //     System.out.println(it.next().toString());
+        // }
     }
 }
