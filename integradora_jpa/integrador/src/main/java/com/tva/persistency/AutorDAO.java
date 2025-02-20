@@ -22,7 +22,8 @@ public class AutorDAO extends DAO {
     }
 
     public Autor findAutor(int id){
-        return em.find(Autor.class, id);
+        Autor autor = em.find(Autor.class, id);
+        return autor;
     }
 
     public List<Autor> findAutores(String nombre){
